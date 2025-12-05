@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       // NOTE: Ensure the path /public/data/projects.json is correct for your server
       const response = await fetch("projects.json");
-      console.log(response);
       console.log(category);
 
       if (!response.ok) {
