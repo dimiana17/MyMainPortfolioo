@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       portfolioContainer.innerHTML = "";
 
       if (projects.length === 0) {
-        portfolioContainer.innerHTML = `<p>No projects found in the selected category: **${category}**.</p>`;
+        portfolioContainer.innerHTML = `<p></p>`;
         return;
       }
 
