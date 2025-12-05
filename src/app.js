@@ -33,7 +33,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 3000; // Use Render's PORT or default to 3000
+const HOST = '0.0.0.0'; // Render requires binding to 0.0.0.0
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server listening on host ${HOST} and port ${PORT}`);
 });
