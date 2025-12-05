@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Fetch Projects from JSON ---
   window.fetchAndDisplayProjects = async function (category) {
     try {
-      const response = await fetch("/data/projects.json");
+      const response = await fetch("/public/data/projects.json");
       console.log(response);
       console.log(category);
       const allProjects = await response.json();
