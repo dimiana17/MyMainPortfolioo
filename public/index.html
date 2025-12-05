@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demiana Fayek | Full-Stack Developer</title>
+    <!--bootstrab-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <!-- awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+      <div class="container-fluid">
+        <!-- Navbar Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link act pe-5" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pe-5" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pe-5" href="#">Resume</a>
+            </li>
+            <!-- <li class="nav-item">
+                        <a class="nav-link pe-5" href="#">Portfolio</a>
+                    </li> -->
+            <li class="nav-item">
+              <a class="nav-link pe-5" href="#">Contact Me</a>
+            </li>
+            <li class="nav-item d-none">
+              <a
+                class="nav-link pe-5 text-warning"
+                href="admin.html"
+                id="adminLoginLink"
+                >Admin Access</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dark Mode Toggle Button (Separate from Links but Inside Navbar) -->
+        <button id="modeToggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- bars background -->
+    <div class="bars-box active">
+      <div class="bar" style="--i: 6"></div>
+      <div class="bar" style="--i: 5"></div>
+      <div class="bar" style="--i: 4"></div>
+      <div class="bar" style="--i: 3"></div>
+      <div class="bar" style="--i: 2"></div>
+      <div class="bar" style="--i: 1"></div>
+    </div>
+    <!-- home section -->
+    <section class="home active">
+      <div class="home-details">
+        <h1>Demiana Fayek</h1>
+
+        <div class="animated-titles">
+          <h2>Data Analyst</h2>
+          <h2>Data Visualization Specialist</h2>
+        </div>
+
+        <p></p>
+
+        <div class="btn-sci">
+          <a href="#" class="btn">Download CV</a>
+          <div class="sci">
+            <a href="https://github.com/dimiana17" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/demiana-fayek-125173236/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="home-img">
+        <div class="img-box">
+          <div class="img-iten">
+            <img src="images/me.jpg" alt="" srcset="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- services section -->
+    <section class="services">
+      <h2 class="heading">My <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <div class="icon">
+            <i class="fa-solid fa-chart-column"></i>
+
+            <a href="#portfolio" data-category="Power%20BI">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+          <h3>Power BI</h3>
+          <p>
+            Creating interactive and insightful Power BI dashboards and reports,
+            enabling data-driven decision-making and actionable business
+            intelligence.
+          </p>
+        </div>
+        <div class="services-box">
+          <div class="icon">
+            <i class="fa-solid fa-database"></i>
+
+            <a href="#portfolio" data-category="SQL">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+          <h3>SQl</h3>
+          <p>
+            Designing and optimizing SQL databases, writing efficient queries
+            and stored procedures to ensure fast, reliable, and scalable data
+            management.
+          </p>
+        </div>
+        <div class="services-box">
+          <div class="icon">
+            <i class="fa-solid fa-chart-line"></i>
+            <a href="#portfolio" data-category="Tableau">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+          <h3>Tableau</h3>
+          <p>
+            Creating interactive and insightful dashboards in Tableau to
+            visualize data effectively, enabling data-driven decision-making and
+            performance tracking.
+          </p>
+        </div>
+        <div class="services-box">
+          <div class="icon">
+            <i class="fa-brands fa-python"></i>
+            <a href="#portfolio" data-category="Python">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+          <h3>Python</h3>
+          <p>
+            Developing robust and efficient solutions using Python, leveraging
+            libraries like pandas, NumPy, and Matplotlib for data analysis,
+            automation, and application development.
+          </p>
+        </div>
+        <div class="services-box">
+          <div class="icon">
+            <i class="fa-brands fa-r-project"></i>
+            <a href="#portfolio" data-category="R">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+          <h3>R</h3>
+          <p>
+            Performing statistical analysis and data visualization using R,
+            applying packages like ggplot2 and dplyr to extract insights and
+            support data-driven decision-making.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- resume section -->
+    <section class="resume">
+      <div class="resume-container">
+        <div class="resume-box">
+          <h2>Why Hire Me?</h2>
+          <p>
+            Analytical thinker passionate about uncovering trends and
+            opportunities using Python, R, SQL, Power BI, and Tableau.
+          </p>
+          <button class="resume-btn active">About Me</button>
+          <button class="resume-btn">Education</button>
+          <button class="resume-btn">Internships</button>
+          <button class="resume-btn">Skills</button>
+        </div>
+        <div class="resume-box">
+          <div class="resume-detail about active">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p class="desc">
+              I am a Data Analyst with experience in analyzing, interpreting,
+              and visualizing data to drive actionable insights. Proficient in
+              Power BI, SQL, Python, R, and Tableau, I transform complex
+              datasets into clear, meaningful reports that support business
+              decisions. I am passionate about leveraging data to solve
+              problems, optimize processes, and contribute to data-driven
+              projects within a collaborative team environment.
+            </p>
+          </div>
+          <div class="resume-detail education">
+            <h2 class="heading">My <span>Education</span></h2>
+            <!-- <p class="desc">
+                        I have pursued my Bachelor's degree in Computer Science, gaining a strong foundation in software development, algorithms, and data structures. 
+                        Throughout my academic journey, I have worked on multiple projects that enhanced my problem-solving and programming skills.
+                    </p> -->
+            <div class="resume-item">
+              <p class="year">2020 - 2024</p>
+              <h3>Computer Science</h3>
+              <p class="company">Information System</p>
+              <p class="company">Assiut University</p>
+              <p>Graduated with a Very Good Grade with Honor</p>
+            </div>
+          </div>
+          <div class="resume-detail internships">
+            <h2 class="heading">My <span>Internships</span></h2>
+            <!-- <p class="desc">
+                        I have gained valuable hands-on experience in frontend and backend development through my internships. 
+                        These experiences have enhanced my coding skills, teamwork, and problem-solving abilities.
+                    </p> -->
+            <div class="resume-list">
+              <div class="resume-item">
+                <p class="year">sep 2024 - dec 2024</p>
+                <h3>Microsoft Power BI Engineer</h3>
+                <p class="company">Digital Egypt Pioneers Program</p>
+                <p>
+                  Analyzing and visualizing data using Power BI to provide
+                  actionable business insights, while gaining practical
+                  experience in data analytics and reporting.
+                </p>
+              </div>
+              <div class="resume-item">
+                <p class="year">dec 2024 - mar 2025</p>
+                <h3>Frontend Developer Intern</h3>
+                <p class="company">Information Technology Institute (ITI)</p>
+                <p>
+                  Developing and optimizing web applications while gaining
+                  practical experience in modern frontend technologies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="resume-detail skills">
+            <h2 class="heading">My <span>Skills</span></h2>
+            <p class="desc">
+              <!-- I am a Data Analyst with hands-on experience in Power BI, SQL, Python, R, Excel, and other data analysis and visualization tools. 
+    Additionally, I have knowledge of frontend, backend, and database technologies, allowing me to interpret data and deliver actionable insights effectively. -->
+            </p>
+
+            <div class="resume-list">
+              <div class="resume-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Power BI</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-database"></i> <span>SQL</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-python"></i> <span>Python</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Tableau</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-registered"></i> <span>R</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-file-excel"></i> <span>Excel</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-css"></i> <span>CSS3</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-html5"></i> <span>HTML5</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-js"></i> <span>JavaScript</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-object-group"></i>
+                <span>UI/UX Design</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-e"></i> <span>ES.Next</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-bootstrap"></i> <span>Bootstrap</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-unity"></i> <span>Unit Testing</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-node-js"></i> <span>Node.js</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-database"></i> <span>MongoDB</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-code-branch"></i> <span>TypeScript</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-angular"></i> <span>Angular</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-react"></i> <span>React.js</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-brands fa-github" > </i> <span>Version Control</span>
+              </div>
+              <div class="resume-item">
+                <i class="fa-solid fa-window-maximize"  id="secretAdminTrigger" class="d-inline-block"></i>
+                <span>Web Tooling & Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="contact">
+      <div class="contact-container">
+        <div class="contact-box">
+          <h2>Let's Work Together</h2>
+          <!-- <p class="desc">
+            I'm always excited to collaborate on innovative projects, whether
+            it's building user-friendly web applications, crafting sleek
+            designs, or solving complex development challenges. Let's connect
+            and bring your ideas to life!
+          </p> -->
+          <br />
+          <br />
+          <div class="contact-detail">
+            <i class="fa-solid fa-phone"></i>
+            <div class="detail">
+              <p>Phone</p>
+              <p>(+20) 1208433378</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="detail">
+              <p>Email</p>
+              <p>dimianafayek894@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-box">
+          <form action="https://formspree.io/f/xrbpzaal" method="POST">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <div class="field-box">
+              <input type="text" name="name" placeholder="Full Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Email Subject"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio section -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Projects</span></h2>
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <div class="project-header">
+            <h3>Project Title</h3>
+            <span>&#9660;</span>
+          </div>
+
+          <div class="project-details">
+            <div class="image-swapper">
+              <img src="..." class="active" />
+              <img src="..." />
+            </div>
+
+            <p>Description...</p>
+            <a href="...">Link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/contact.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        /* Simple custom styles for the dashboard container */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light background for the dashboard area */
+            border-radius: 8px;
+        }
+        .chart-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            height: 400px; /* Fixed height for consistent chart display */
+        }
+        .project-box img {
+            max-width: 70px;
+            height: auto;
+            object-fit: cover;
+        }
+        /* Style for the link back to the portfolio */
+        #backToPortfolio {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="js/adminAuth.js"></script>
+
+    <div class="dashboard-container">
+        <a href="index.html" class="btn btn-outline-secondary" id="backToPortfolio">Back to Portfolio</a>
+        
+        <!-- <h1 class="text-center mb-4 text-primary">Admin Dashboard</h1>
+        <p class="text-center text-muted">Manage Portfolio Projects (Data stored in Local Storage)</p>
+        
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="chart-box">
+                    <h5 class="text-center">Projects by Category</h5>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-box">
+                    <h5 class="text-center">Projects Added Over Time</h5>
+                    <canvas id="timeChart"></canvas>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- <hr> -->
+
+        <h2 class="mb-4 text-secondary">Add New Project</h2>
+        
+        <form id="projectForm" class="p-4 bg-white border rounded shadow-sm mb-5">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="title" class="form-label">Project Title</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="E.g., E-commerce App" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" name="category" id="category" class="form-control" placeholder="E.g., Power BI, Python, Full-Stack" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="link" class="form-label">Project Link (URL)</label>
+                <input type="url" name="link" id="link" class="form-control" placeholder="https://live-demo.com" required />
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3" placeholder="Brief description for the portfolio page..." required></textarea>
+            </div>
+            
+            <p class="text-warning small">Note: File input is for demonstration. Images are stored as mock URLs.</p>
+            <input type="file" name="images" id="images" class="form-control mb-3" multiple accept="image/*" /> 
+            <button type="submit" class="btn btn-primary w-100">Add Project to Portfolio</button>
+        </form>
+
+        <h2 class="mb-4 text-secondary">Manage Projects</h2>
+        
+        <div id="projectsContainer">
+            </div>
+
+    </div>
+
+    <script src="js/admin.js"></script>
+    
+</body>
+</html>
