@@ -1,4 +1,4 @@
-// portfolio.js (Revised for Collapse and Image Swapper)
+// portfolio.js (Revised for JSON Fetch + Collapse + Image Swapper)
 
 document.addEventListener("DOMContentLoaded", () => {
   const portfolioContainer = document.querySelector(".portfolio-container");
@@ -6,15 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Image Swapper Logic ---
   function setupImageSwapper(projectElement, images) {
-    if (!images || images.length <= 1) return; // No swapper needed for 0 or 1 image
+    if (!images || images.length <= 1) return;
 
     const swapperContainer = projectElement.querySelector(".image-swapper");
 
-    // Add navigation buttons
     swapperContainer.innerHTML += `
-            <button class="prev-btn">Prev</button>
-            <button class="next-btn">Next</button>
-        `;
+      <button class="prev-btn">Prev</button>
+      <button class="next-btn">Next</button>
+    `;
 
     const imageElements = swapperContainer.querySelectorAll("img");
     let currentIndex = 0;
@@ -36,59 +35,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Project Fetch & Display Logic ---
+  // --- Fetch Projects from JSON ---
   window.fetchAndDisplayProjects = async function (category) {
     try {
-      const url = category
-        ? `http://localhost:5000/projects?category=${category}`
-        : "http://localhost:5000/projects";
+      const response = await fetch("/data/projects.json");
+      console.log(response);
+      console.log(category);
+      const allProjects = await response.json();
 
-      const response = await fetch(url);
-      const projects = await response.json();
+      if (!Array.isArray(allProjects)) throw new Error("JSON must return array");
 
-      if (!Array.isArray(projects))
-        throw new Error("Projects not returned as array");
+      const projects = category
+        ? allProjects.filter((p) => p.category === category)
+        : allProjects;
 
-      portfolioContainer.innerHTML = ""; // Clear container
+      portfolioContainer.innerHTML = "";
 
       projects.forEach((project) => {
         const projectElement = document.createElement("div");
         projectElement.classList.add("portfolio-box");
 
-        // 1. Generate Image Tags for Swapper
+        // Build images
         let imageTags = "";
         if (project.images && project.images.length > 0) {
-          project.images.forEach((src, index) => {
-            // Mark the first image as active
-            const isActive = index === 0 ? "active" : "";
-            const fullSrc = `http://localhost:5000${src}`;
-            imageTags += `<img src="${fullSrc}" alt="${project.title} - Image ${
-              index + 1
-            }" class="${isActive}" />`;
+          project.images.forEach((src, i) => {
+            const isActive = i === 0 ? "active" : "";
+            imageTags += `
+              <img src="${src}" class="${isActive}" alt="${project.title} image ${i + 1}">
+            `;
           });
         } else {
-          // Fallback to placeholder if no images
-          imageTags = `<img src="placeholder.png" alt="No image available" class="active" />`;
+          imageTags = `<img src="placeholder.png" class="active">`;
         }
 
+        // Build card
         projectElement.innerHTML = `
-                    <div class="project-header">
-                        <h2>${project.title}</h2>
-                        <span class="collapse-icon">&#9660;</span>
-                    </div>
-                    <div class="project-details collapsed">
-                        
-                        <p>${project.description}</p>
-                        <hr>
-                        <div class="image-swapper">
-                            ${imageTags}
-                        </div>
-                        <a href="${project.link}" target="_blank">Github Link</a>
-                    </div>
-                `;
+          <div class="project-header">
+            <h2>${project.title}</h2>
+            <span class="collapse-icon">&#9660;</span>
+          </div>
+
+          <div class="project-details collapsed">
+            <p>${project.description}</p>
+            <hr>
+
+            <div class="image-swapper">${imageTags}</div>
+
+            <a href="${project.link}" target="_blank">View GitHub</a>
+          </div>
+        `;
+
         portfolioContainer.appendChild(projectElement);
 
-        // 2. Setup Collapse and Swapper Listeners
+        // Collapse Logic
         const header = projectElement.querySelector(".project-header");
         const details = projectElement.querySelector(".project-details");
         const icon = projectElement.querySelector(".collapse-icon");
@@ -100,19 +99,20 @@ document.addEventListener("DOMContentLoaded", () => {
             : "&#9650;";
         });
 
-        // Set up the swapper after the elements are in the DOM
+        // Setup image swapper
         setupImageSwapper(projectElement, project.images);
       });
-    } catch (error) {
-      console.error("Error loading projects:", error);
-      portfolioContainer.innerHTML =
-        "<p>Failed to load projects. Please try again later.</p>";
+    } catch (err) {
+      console.error(err);
+      portfolioContainer.innerHTML = "<p>Error loading projects.</p>";
     }
   };
 
-  // Initial load and category listeners remain the same
+  // Category selection event
   window.addEventListener("categorySelected", (event) => {
     window.fetchAndDisplayProjects(event.detail.category);
   });
+
+  // Initial load
   window.fetchAndDisplayProjects(category);
 });

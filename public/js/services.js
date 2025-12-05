@@ -1,35 +1,45 @@
 // services.js
 document.addEventListener("DOMContentLoaded", () => {
-  const catBtns = document.querySelectorAll('.services-box .icon a');
+  const catBtns = document.querySelectorAll(".services-box .icon a");
 
   catBtns.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault(); // prevent default link behavior if href exists
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
 
-      const category = this.dataset.category;
+      // Decode category to convert '%20' into space
+      const category = decodeURIComponent(btn.dataset.category);
+      console.log("Category selected:", category);
       if (!category) return;
 
-      // Store selected category
+      // Save selected category
       localStorage.setItem("selectedCategory", category);
 
-      // Dispatch custom event to update portfolio
-      window.dispatchEvent(new CustomEvent('categorySelected', { detail: { category } }));
+      // Notify portfolio.js to filter projects
+      window.dispatchEvent(
+        new CustomEvent("categorySelected", { detail: { category } })
+      );
+
+      // --- Page Section Navigation ---
+      const portfolioSection = document.querySelector("#portfolio");
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      // Remove active from all sections
+      sections.forEach(sec => sec.classList.remove("active"));
 
       // Activate portfolio section
-      const portfolioSection = document.querySelector('#portfolio');
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      portfolioSection?.classList.add("active");
 
-      // Remove 'active' class from all sections
-      sections.forEach(section => section.classList.remove('active'));
-      // Add 'active' to portfolio
-      if (portfolioSection) portfolioSection.classList.add('active');
-
-      // Update navbar
-      navLinks.forEach(link => link.classList.remove('act'));
+      // Fix navbar selected item
+      navLinks.forEach(link => link.classList.remove("act"));
       navLinks.forEach(link => {
-        if (link.getAttribute('href') === '#portfolio') link.classList.add('act');
+        if (link.getAttribute("href") === "#portfolio") {
+          link.classList.add("act");
+        }
       });
+
+      // Smooth scroll (optional)
+      portfolioSection?.scrollIntoView({ behavior: "smooth" });
     });
   });
 });
