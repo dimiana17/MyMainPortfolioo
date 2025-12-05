@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const swapperContainer = projectElement.querySelector(".image-swapper");
 
+    // FIX: Enclose HTML in backticks (Template Literal)
     swapperContainer.innerHTML += `
       <button class="prev-btn">Prev</button>
       <button class="next-btn">Next</button>
     `;
 
+    // Note: The images are already built and appended in fetchAndDisplayProjects
     const imageElements = swapperContainer.querySelectorAll("img");
     let currentIndex = 0;
 
@@ -38,18 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Fetch Projects from JSON ---
   window.fetchAndDisplayProjects = async function (category) {
     try {
+      // NOTE: Ensure the path /public/data/projects.json is correct for your server
       const response = await fetch("/public/data/projects.json");
       console.log(response);
       console.log(category);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const allProjects = await response.json();
 
-      if (!Array.isArray(allProjects)) throw new Error("JSON must return array");
+      if (!Array.isArray(allProjects)) throw new Error("JSON must return an array of projects.");
 
       const projects = category
         ? allProjects.filter((p) => p.category === category)
         : allProjects;
 
       portfolioContainer.innerHTML = "";
+
+      if (projects.length === 0) {
+        portfolioContainer.innerHTML = `<p>No projects found in the selected category: **${category}**.</p>`;
+        return;
+      }
 
       projects.forEach((project) => {
         const projectElement = document.createElement("div");
@@ -60,15 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (project.images && project.images.length > 0) {
           project.images.forEach((src, i) => {
             const isActive = i === 0 ? "active" : "";
-            imageTags += `
-              <img src="${src}" class="${isActive}" alt="${project.title} image ${i + 1}">
-            `;
+            // FIX: Enclose HTML in backticks
+            imageTags += `<img src="${src}" class="${isActive}" alt="${project.title} image ${i + 1}">`;
           });
         } else {
+          // FIX: Enclose HTML in backticks
           imageTags = `<img src="placeholder.png" class="active">`;
         }
 
         // Build card
+        // FIX: Enclose the entire multi-line HTML block in backticks
         projectElement.innerHTML = `
           <div class="project-header">
             <h2>${project.title}</h2>
@@ -84,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="${project.link}" target="_blank">View GitHub</a>
           </div>
         `;
-
         portfolioContainer.appendChild(projectElement);
 
         // Collapse Logic
@@ -95,21 +108,23 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
           details.classList.toggle("collapsed");
           icon.innerHTML = details.classList.contains("collapsed")
-            ? "&#9660;"
-            : "&#9650;";
+            ? "&#9660;" // Down arrow
+            : "&#9650;"; // Up arrow
         });
 
         // Setup image swapper
         setupImageSwapper(projectElement, project.images);
       });
     } catch (err) {
-      console.error(err);
-      portfolioContainer.innerHTML = "<p>Error loading projects.</p>";
+      console.error("Error fetching or displaying projects:", err);
+      portfolioContainer.innerHTML = "<p>Error loading projects. Check console for details.</p>";
     }
   };
 
-  // Category selection event
+  // Category selection event listener
   window.addEventListener("categorySelected", (event) => {
+    // Save the new category to maintain state on page reload/navigation
+    localStorage.setItem("selectedCategory", event.detail.category);
     window.fetchAndDisplayProjects(event.detail.category);
   });
 
