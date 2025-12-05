@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Build images
         let imageTags = "";
         if (project.images && project.images.length > 0) {
+          console.log(project.images);
           project.images.forEach((src, i) => {
             const isActive = i === 0 ? "active" : "";
             // FIX: Enclose HTML in backticks
