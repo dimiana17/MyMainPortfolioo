@@ -7,7 +7,8 @@
     "link": "https://github.com/dimiana17/Bank-Loan-Report",
     "images": [
       "a.jpg",
-      "b.jpg"
+      "b.jpg",
+      "c.png"
     ],
     "createdAt": "2025-12-04T21:00:39.905Z",
     "updatedAt": "2025-12-04T21:00:39.905Z"
@@ -83,6 +84,34 @@
       "rs_sql10.png",
       "rs_sql11.png",
       "rs_sql12.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bg1",
+    "title": "Pizza Sales Report",
+    "description": "This Pizza Sales Report provides key performance indicators and analyzes sales trends from January to December 2015. The total Annual Revenue was ₹817.86K across 21,350 Total Orders. The analysis pinpoints that orders peak on weekends (Friday/Saturday) and during the months of July and January. In terms of products, the 'Classic' category drives the highest revenue and total orders. Large pizza size contributes the most to maximum sales, and the Thai Chicken Pizza is a top performer by revenue, while the Brie Carre Pizza is the worst seller by all key metrics (Revenue, Quantity, and Orders).",
+    "category": "Power BI",
+    "link": "https://github.com/dimiana17/Pizza-Sales-Report",
+    "images": [
+      "ps_p1.png",
+      "ps_p2.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bg2",
+    "title": "Supply Chain Dashboard",
+    "description": "sales analysis dashboard summarizes total revenue at $2.29M with a strong 97% Net Profit Margin and $2.23M Net Profit. Skincare is the top-performing product type, contributing $1.05M in revenue and 21K units sold. The majority of sales are profitable (97% of SKUs), with SKU11 being the most profitable. Customer demographics show a significant portion of sales from Female (27.77%) and Non-binary (22.95%) customers.",
+    "category": "Power BI",
+    "link": "",
+    "images": [
+      "sc1.jpeg",
+      "sc2.png",
+      "sc3.png",
+      "sc4.png"
     ],
     "createdAt": "2025-12-04T21:00:39.905Z",
     "updatedAt": "2025-12-04T21:00:39.905Z"
