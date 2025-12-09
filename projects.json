@@ -11,5 +11,80 @@
     ],
     "createdAt": "2025-12-04T21:00:39.905Z",
     "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bf7",
+    "title": "British Airways Dashboard",
+    "description": "This dashboard provides a multi-faceted analysis of British Airways customer reviews (2016-2023). The average Overall Rating is 4.2, but categories like Food Beverages (2.4) and Entertainment (1.4) are significant pain points. Visualizations track rating performance over time, compare satisfaction across different countries, and analyze performance by specific Aircraft type, showing both average rating and review volume. The data is fully filterable by Traveller Type and Seat Type to facilitate targeted operational improvements.",
+    "category": "Tableau",
+    "link": "https://github.com/dimiana17/British-Airways-Dashboard",
+    "images": [
+      "dashboard1.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bf8",
+    "title": "Airline-Flights-Data-Analysis-using-Python",
+    "description": "set of visualizations provides a comprehensive analysis of flight data, covering flight frequencies by airline, route, time of day, and price dynamics across different variables like airline, class, and time of day.",
+    "category": "Python",
+    "link": "https://github.com/dimiana17/Airline-Flights-Data-Analysis-using-Python",
+    "images": [
+      "al_p1.png",
+      "al_p2.png",
+      "al_p3.png",
+      "al_p4.png",
+      "al_p5.png",
+      "al_p6.png",
+      "al_p7.png",
+      "al_p8.png",
+      "al_p9.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bf8",
+    "title": "911 Calls Capstone Project",
+    "description": "analysis of 911 call data investigates the distribution of emergency calls across different categories, time periods, and days of the week. EMS calls are the most frequent reason, significantly outweighing Traffic and Fire calls. The call volume exhibits a clear annual downward trend and a daily pattern, peaking consistently during late afternoon and early evening hours (around 4 PM to 6 PM) on weekdays. This dashboard is crucial for resource allocation and optimizing emergency response based on predictable demand patterns.",
+    "category": "Python",
+    "link": "https://github.com/dimiana17/911-Calls-Capstone-Project",
+    "images": [
+      "911_c_p1.png",
+      "911_c_p2.png",
+      "911_c_p3.png",
+      "911_c_p4.png",
+      "911_c_p5.png",
+      "911_c_p6.png",
+      "911_c_p7.png",
+      "911_c_p8.png",
+      "911_c_p9.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bf9",
+    "title": "SQL Retail Sales Analysis",
+    "description": "This analysis uses SQL queries to extract key sales metrics from a retail database. The database contains transactions across Clothing, Electronics, and Beauty categories. The total sales are highest for Electronics (₹311,445) and Clothing (₹309,995). The average age of customers purchasing the 'Beauty' category is 40 years. Further analysis identifies top performing customers by total sales (e.g., Customer ID 3 with ₹38,440) and highlights gender-specific purchasing trends, showing similar transaction counts between genders across the three main categories.",
+    "category": "SQL",
+    "link": "https://github.com/dimiana17/SQL-Retail-Sales-Analysis",
+    "images": [
+      "rs_sql1.png",
+      "rs_sql2.png",
+      "rs_sql3.png",
+      "rs_sql4.png",
+      "rs_sql5.png",
+      "rs_sql6.png",
+      "rs_sql7.png",
+      "rs_sql8.png",
+      "rs_sql9.png",
+      "rs_sql10.png",
+      "rs_sql11.png",
+      "rs_sql12.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
   }
 ]
