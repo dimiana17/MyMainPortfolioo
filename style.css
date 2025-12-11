@@ -230,6 +230,7 @@ section.active {
 }
 
 .animated-titles h2 {
+    font-size: 1.2rem;
     position: absolute;
     width: 100%;
     opacity: 0;
