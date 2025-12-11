@@ -130,5 +130,26 @@
     ],
     "createdAt": "2025-12-04T21:00:39.905Z",
     "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bg4",
+    "title": "Zaffa E-commerce Website",
+    "description": "",
+    "category": "Web Development",
+    "link": "https://github.com/Mariam-Gappla/Graduation-project",
+    "images": [
+      "zaffa1.png",
+      "zaffa2.png",
+      "zaffa3.png",
+      "zaffa4.png",
+      "zaffa5.png",
+      "zaffa6.jpg",
+      "zaffa7.jpg",
+      "zaffa8.jpg",
+      "zaffa9.jpg",
+      "zaffa10.jpg"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
   }
 ]
