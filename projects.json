@@ -1,5 +1,37 @@
 [
   {
+    "id": "6931f677b3c11fdee1b27bg5",
+    "title": "Airbnb market analysis in Albany.",
+    "description": "A professional Power BI analytics suite that transforms complex Airbnb market data into actionable investment insights. This project features a high-performance dashboard analyzing $4.15M in annual revenue, seasonal occupancy fluctuations, and host reputation metrics through advanced DAX modeling and a custom-designed user interface.",
+    "category": "Power BI",
+    "link": "https://github.com/dimiana17/Airbnb-market-analysis-in-Albany---from-data-to-investment.",
+    "images": [
+      "airbnb1.png",
+      "airbnb2.png",
+      "airbnb3.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
+    "id": "6931f677b3c11fdee1b27bg5",
+    "title": "Airbnb market analysis in Albany.",
+    "description": "Beyond visualization, I engineered a robust SQL analytical layer to validate market trends and perform complex business logic calculations. Using advanced SQL techniques—including CTEs, Aggregate Window Functions, and Case Logic—I conducted a deep-dive audit of the Albany Airbnb market. My analysis successfully quantified the premium value of 'Superhost' status, identifying that Superhosts command 16% higher prices and 78% more booking demand than regular hosts. Additionally, I developed a custom Host Tiering Model to segment the market into individual vs. professional portfolios, uncovering that professional management groups (16+ properties) control over 20% of the total inventory while maintaining superior satisfaction ratings.",
+    "category": "SQL",
+    "link": "https://github.com/dimiana17/Airbnb-market-analysis-in-Albany---from-data-to-investment.",
+    "images": [
+      "airbnb4.png",
+      "airbnb5.png",
+      "airbnb6.png",
+      "airbnb7.png",
+      "airbnb8.png",
+      "airbnb9.png",
+      "airbnb10.png"
+    ],
+    "createdAt": "2025-12-04T21:00:39.905Z",
+    "updatedAt": "2025-12-04T21:00:39.905Z"
+  },
+  {
     "id": "6931f677b3c11fdee1b27bf6",
     "title": "Bank Loan Report",
     "description": "A comprehensive interactive model for analyzing bank loan data was built using Power BI.",
